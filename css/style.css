@@ -32,6 +32,7 @@ main {
   flex-grow: 1;
   display: flex;
   justify-content: center;
+  opacity: 0;
 }
 
 :root {

@@ -22,7 +22,7 @@ $(document).ready(function() {
     $('.swiperHeader .swiper-wrapper .swiper-slide a.active').removeClass('active');
     $(this).addClass('active');    
     var panel = $(this).attr('href');
-    $(panel).fadeIn(0);   
+    $(panel).fadeTo(0, 1)
     var sel = panel + " .moyka"
     if (moykaswiper !=undefined){
       moykaswiper.destroy()
