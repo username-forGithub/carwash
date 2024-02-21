@@ -50,11 +50,11 @@ $(document).ready(function() {
 
 
 
-    $(`${panel} .instructions ul li`).click(function() {
-      console.log(`${panel} .instructions ul li`);
+    $(`${panel} .instructions ul li`).click(function(e) {
       var id = $(this).attr('id');
       let res = id.substr(-1);
       moykaswiper.slideTo(Number(res))
+      e.stopImmediatePropagation();
     });
 
     const getNeedsEl = $(`${panel} .needs`)
@@ -123,8 +123,6 @@ $(document).ready(function() {
       getTargetElneed = document.querySelector(`${panel} .needs .content ul#moykaNeeds-${moykaswiper.realIndex}`)
       getTargetElneed.classList.add("active") 
 
-      // console.log(">>isBeginning>> ", moykaswiper.isBeginning);
-      // console.log(">>isEnd>> ", moykaswiper.isEnd);
     });
     return false;
     
@@ -145,6 +143,5 @@ $(document).ready(function() {
         el.classList.add("active")
       }     
     });
-  }
- 
+  } 
 });
